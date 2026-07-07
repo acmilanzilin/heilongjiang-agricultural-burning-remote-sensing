@@ -1,6 +1,6 @@
 # Agricultural Burning Detection with Remote Sensing Data
 
-[View the full rendered notebook on GitHub](notebooks/agricultural_burning_remote_sensing.ipynb)
+[View the full rendered notebook](notebooks/agricultural_burning_remote_sensing.ipynb)
 
 A geospatial Python project for identifying and characterising likely post-harvest agricultural burning patterns in Heilongjiang using satellite fire points, crop phenology, and administrative boundaries.
 
