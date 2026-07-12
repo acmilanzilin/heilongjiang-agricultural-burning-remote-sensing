@@ -29,12 +29,29 @@ Heilongjiang is used as the case study because it is one of China's major grain-
 
 These results should be read as exploratory evidence, not final causal attribution. The workflow identifies a transparent and reproducible lower-bound subset by combining MODIS fire locations with valid maize/wheat maturity pixels and a post-maturity time window. The FY validation period confirms that many reference straw-burning points are visible in same-period MODIS data. The sensitivity analysis further shows that recall increases substantially when the post-maturity window is extended: the matched FY-MODIS recall rises from 1.27% under the 30-day window to 35.63% under the 90-day window. This suggests that the fixed 30-day window is one important reason for the low recall. However, recall remains incomplete even at 90 days. This is consistent with Zhou et al. (2021), who show that Heilongjiang straw resources include a large rice-straw component as well as maize straw, while this workflow only includes maize and wheat maturity rasters. Therefore, the current method should be interpreted as a conservative maize/wheat post-maturity screen, not a comprehensive straw-burning detector.
 
+## Key Visual Results
+
+The hotspot map uses a fixed sample of 30,000 fire detections for visual clarity. The classification, trend and validation results are calculated from the full boundary-filtered Heilongjiang dataset.
+
+![Sampled fire hotspots in Heilongjiang](outputs/figures/sampled_fire_hotspots_heilongjiang.png)
+
+The map shows that fire detections are spatially clustered rather than evenly distributed across the province.
+
+![Fire categories in Heilongjiang](outputs/figures/fire_categories_heilongjiang.png)
+
+The classified post-maturity subset is concentrated within maize and wheat maturity surfaces, while other MODIS fire detections remain much more widespread.
+
+![Post-maturity agricultural fire frequency and mean FRP](outputs/figures/post_maturity_fire_frequency_frp.png)
+
+The annual series shows a decline in the screened agricultural-burning subset after the early 2010s, while mean FRP varies between years.
+
 ## Repository Contents
 
 - `notebooks/agricultural_burning_remote_sensing.ipynb`: cleaned report-style analysis notebook.
 - `data/sample/`: MODIS annual CSV files, crop maturity rasters, Fengyun straw-burning reference data used for validation, and smaller derived GeoJSON files.
 - `data/external/`: full China county boundary shapefile and the full Heilongjiang MODIS GeoJSON.
 - `outputs/agricultural_burning_remote_sensing.html`: rendered notebook report for quick viewing.
+- `outputs/figures/`: selected PNG figures displayed in this README.
 
 All available project data are retained in this directory, including the full `data/external/modis_hlj.geojson` file. Because this GeoJSON is larger than GitHub's normal 100 MB file limit, a public repository should use Git LFS for data files.
 
